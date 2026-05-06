@@ -7,6 +7,9 @@
   --pink: #ff546e;
   --violet: #6652ff;
   --line: #e7eaf3;
+  /* Logo R: navy → violet (assets/LOGO.png) */
+  --brand-r-start: #002e6e;
+  --brand-r-end: #7e22ce;
 }
 
 * {
@@ -83,6 +86,26 @@ a {
 
 .brand-text {
   font-size: 1.8rem;
+  background: linear-gradient(105deg, var(--brand-r-start) 0%, var(--brand-r-end) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.brand-logo-wrap {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.brand-logo-img {
+  height: 84px;
+  width: 84px;
+  max-width: 84px;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .btn {
@@ -109,14 +132,25 @@ a {
 .btn-whatsapp {
   min-height: 54px;
   padding: 0 28px;
-  font-size: 1.3rem;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  gap: 10px;
+}
+
+.btn-whatsapp .whatsapp-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
 }
 
 .btn-primary {
-  min-height: 66px;
   padding: 0 34px;
   margin-top: 22px;
-  font-size: 1.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  min-height: 58px;
+  font-weight: 600;
 }
 
 .tag {
@@ -127,9 +161,9 @@ a {
   border-radius: 999px;
   padding: 8px 16px;
   background: rgba(255, 255, 255, 0.9);
-  font-size: 0.95rem;
-  font-weight: 700;
   color: #555d6b;
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .tag::before {
@@ -170,7 +204,8 @@ h3 {
 
 h1 {
   margin-top: 24px;
-  font-size: clamp(2.6rem, 5vw, 5.25rem);
+  font-size: 2.25rem;
+  font-weight: 700;
 }
 
 h2 {
@@ -180,8 +215,8 @@ h2 {
 p {
   margin: 0;
   color: var(--muted);
-  line-height: 1.5;
-  font-size: clamp(1.2rem, 1.7vw, 1.75rem);
+  line-height: 1.625;
+  font-size: 1.125rem;
 }
 
 .hero-copy p {
@@ -388,6 +423,8 @@ p {
   max-width: 21ch;
   margin: 0 auto;
   text-align: center;
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .site-footer {
@@ -399,9 +436,11 @@ p {
 .footer-content {
   min-height: 78px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 18px;
+  text-align: center;
 }
 
 .footer-brand {
@@ -410,14 +449,11 @@ p {
   gap: 10px;
 }
 
-.footer-brand-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 9px;
-  display: grid;
-  place-items: center;
-  color: #fff;
-  background: linear-gradient(140deg, #2563eb, #6c3bff);
+.site-footer .brand-logo-img {
+  height: 64px;
+  width: 64px;
+  max-width: 64px;
+  border-radius: 50%;
 }
 
 .footer-brand-text {
@@ -429,7 +465,8 @@ p {
 .footer-copy {
   margin: 0;
   color: rgba(232, 236, 247, 0.62);
-  font-size: 1.35rem;
+  font-size: 11px;
+  text-align: center;
 }
 
 .accent-blue {
@@ -481,8 +518,10 @@ p {
   }
 
   .btn-primary {
+    font-size: 1rem;
+    line-height: 1.5rem;
     min-height: 58px;
-    font-size: 1.3rem;
+    font-weight: 600;
   }
 
   .footer-brand-text {
@@ -544,14 +583,23 @@ p {
   }
 
   .nav {
-    min-height: 76px;
+    min-height: 88px;
+  }
+
+  .brand-logo-img {
+    height: 72px;
+    width: 72px;
+    max-width: 72px;
+  }
+
+  .site-footer .brand-logo-img {
+    height: 56px;
+    width: 56px;
+    max-width: 56px;
   }
 
   .footer-content {
     min-height: 92px;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
     padding: 18px 0;
   }
 
